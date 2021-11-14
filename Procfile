@@ -1,0 +1,1 @@
+web: gunicorn newblosgs.wsgi --log-file -

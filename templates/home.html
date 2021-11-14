@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Bosh sahifa{% endblock title %}
+{% block content %}
+    <br/>
+    <div class="jumbotron" style="margin-left:5%" >
+        <h1 class="display-4">Assalomu alaykum !</h1>
+        <p class="\lead">Shahzod Sharofiddinov Shaxsiy blogiga xush kelibsiz.</p>
+        <hr class="my-4">
+        <p>saytimiz sizga foydali bo'ladi degan umiddamiz</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">Postlarni ko'rish</a>
+        </p>
+    </div>
+
+{% endblock content %}

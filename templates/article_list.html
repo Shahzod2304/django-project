@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Postlar{% endblock title %}
+
+{% block content %}
+
+   {% for articles in object_list %}
+    <div class="card" style="width: 45rem; margin-left:10%">
+        <div class="card-header">
+            <span class="font-weight-bold"><a href="{% url 'article_detail' articles.pk %}"><h2>{{ articles.title }}</h2></a></span>
+        </div>
+        {% if articles.photo %}
+            <img src="{{ articles.photo.url }}" class="card-img-top" alt="{{ articles.title }}">
+        {% endif %}
+        <div class="card-body">
+            {{ articles.summary }}...<a href="{% url 'article_detail' articles.pk %}">Batafsil</a>
+        </div>
+        <div class="cart-footer text-left text-muted">
+            <span class="text-muted">muallif {{ articles.author | title }} {{articles.date}}</span>
+        </div>        
+    </div>
+    {% endfor %}
+{% endblock content %}
